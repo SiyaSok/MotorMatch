@@ -19,8 +19,9 @@ import Safety from "@/components/ui/cars/Safety";
 import Features from "@/components/ui/cars/Features";
 import Specifications from "@/components/ui/cars/Specifications";
 
-const CarDisplayPage = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
+  const { id } = await props.params;
+
   const car = await getSingleCars(id);
 
   return (
@@ -52,13 +53,15 @@ const CarDisplayPage = async ({ params }: { params: { id: string } }) => {
               {car.mileage.toLocaleString()} Km
             </div>
             <div className='flex items-center flex-col'>
-              <Car className='w-8 h-8' />
+              <Car className='w-8 h-8' />{" "}
               <span className='text-xl font-bold'>Body</span> {car.bodyType}
             </div>
             <div className='flex items-center flex-col'>
-              <Armchair className='w-8 h-8' />
+              {" "}
+              <Armchair className='w-8 h-8' />{" "}
               <span className='text-xl font-bold'>Seats</span> {car.Seats}
             </div>
+
             <div className='flex items-center flex-col'>
               <Fuel className='w-8 h-8' />
               <span className='text-xl font-bold'>Fuel</span> {car.fuelType}
@@ -68,15 +71,15 @@ const CarDisplayPage = async ({ params }: { params: { id: string } }) => {
               <span className='text-xl font-bold'>Transmission</span>{" "}
               {car.transmission}
             </div>
+
             <div className='flex items-center flex-col'>
               <Gauge className='w-8 h-8' />
-              <span className='text-xl font-bold'>Top Speed</span>{" "}
-              {car.performance?.topSpeed || "N/A"} Km/h
+              <span className='text-xl font-bold'>Mileage</span>{" "}
+              {car.performance?.topSpeed} Km/h
             </div>
           </div>
         </div>
       </div>
-
       <div className='space-y-4'>
         <div className='grid mt-6'>
           <Engine car={car} />

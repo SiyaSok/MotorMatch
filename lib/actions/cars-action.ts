@@ -17,5 +17,5 @@ export async function getCars(): Promise<CarTypeS[]> {
 
 export const getSingleCars = async (id: string): Promise<CarTypeS> => {
   const data = await Car.findById(id);
-  return data.toObject(); // if using Mongoose
+  return convertToPlainObject(data) as unknown as CarTypeS;
 };
