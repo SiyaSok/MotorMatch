@@ -1,15 +1,14 @@
 /** @format */
 
 // import { Badge } from "@/components/ui/badge";
-import {
-  // Gauge,
-  Wallet,
-  // Armchair,
-  // Car,
-  // Fuel,
-  // Cog,
-  // CircleGauge,
-} from "lucide-react";
+import // Gauge,
+// Wallet,
+// Armchair,
+// Car,
+// Fuel,
+// Cog,
+// CircleGauge,
+"lucide-react";
 
 import { getSingleCars } from "@/lib/actions/cars-action";
 import CarDisplayPageImages from "@/components/ui/cars/CarDisplayPageImages";
