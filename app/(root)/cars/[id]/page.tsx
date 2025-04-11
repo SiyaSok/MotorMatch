@@ -11,7 +11,7 @@ import // Gauge,
 "lucide-react";
 
 import { getSingleCars } from "@/lib/actions/cars-action";
-import CarDisplayPageImages from "@/components/ui/cars/CarDisplayPageImages";
+// import CarDisplayPageImages from "@/components/ui/cars/CarDisplayPageImages";
 // import Engine from "@/components/ui/cars/Engine";
 // import PerformanceEconomy from "@/components/ui/cars/PerformanceEconomy";
 // import Safety from "@/components/ui/cars/Safety";
@@ -23,10 +23,12 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
 
   const car = await getSingleCars(id);
 
+  console.log(car);
+
   return (
     <section className='container mx-auto px-4 py-8'>
       <div className='grid md:grid-cols-2 gap-8'>
-        <CarDisplayPageImages car={car} />
+        {/* <CarDisplayPageImages car={car} /> */}
         <div className='space-y-4'>
           {/* <h1 className='text-3xl font-bold flex items-center gap-2'>
             {car.brand} {car.year} {car.name} ({car.model})
