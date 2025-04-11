@@ -98,7 +98,6 @@ export default async function Home() {
   //             "https://assets.volkswagen.com/is/image/volkswagenag/VW-Polo-Vivo_245?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE5MjAmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmNzgwOQ==",
   //             "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM=",
   //             "https://assets.volkswagen.com/is/image/volkswagenag/amarok-range?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTEwNTImaGVpPTEwNTImYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmZTk1ZQ==",
-
   //             "https://assets.volkswagen.com/is/image/volkswagenag/VW-Golf-HPB?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE5MjAmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmNzgwOQ==",
   //           ],
   //           features: {
@@ -160,7 +159,7 @@ export default async function Home() {
   //             airbagQuantity: faker.number.int({ min: 2, max: 8 }),
   //           },
   //           available: true,
-  //           isNew: faker.datatype.boolean(),
+  //           isNewCar: faker.datatype.boolean(),
   //           isCommercial: faker.datatype.boolean(),
   //           dealer: dealer._id,
   //           manufacturer: manufacturer._id,

@@ -94,7 +94,7 @@ const CarSchema = new Schema(
       airbagQuantity: Number,
     },
     available: { type: Boolean, default: true, required: true },
-    isNew: { type: Boolean, default: false, required: true },
+    isNewCar: { type: Boolean, default: false, required: true },
     isCommercial: { type: Boolean, default: false, required: true },
     dealer: {
       type: Schema.Types.ObjectId,
