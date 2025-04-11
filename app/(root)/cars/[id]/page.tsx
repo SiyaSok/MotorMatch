@@ -1,23 +1,23 @@
 /** @format */
 
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import {
-  Gauge,
+  // Gauge,
   Wallet,
-  Armchair,
-  Car,
-  Fuel,
-  Cog,
-  CircleGauge,
+  // Armchair,
+  // Car,
+  // Fuel,
+  // Cog,
+  // CircleGauge,
 } from "lucide-react";
 
 import { getSingleCars } from "@/lib/actions/cars-action";
 import CarDisplayPageImages from "@/components/ui/cars/CarDisplayPageImages";
-import Engine from "@/components/ui/cars/Engine";
-import PerformanceEconomy from "@/components/ui/cars/PerformanceEconomy";
-import Safety from "@/components/ui/cars/Safety";
-import Features from "@/components/ui/cars/Features";
-import Specifications from "@/components/ui/cars/Specifications";
+// import Engine from "@/components/ui/cars/Engine";
+// import PerformanceEconomy from "@/components/ui/cars/PerformanceEconomy";
+// import Safety from "@/components/ui/cars/Safety";
+// import Features from "@/components/ui/cars/Features";
+// import Specifications from "@/components/ui/cars/Specifications";
 
 const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
@@ -29,14 +29,14 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
       <div className='grid md:grid-cols-2 gap-8'>
         <CarDisplayPageImages car={car} />
         <div className='space-y-4'>
-          <h1 className='text-3xl font-bold flex items-center gap-2'>
+          {/* <h1 className='text-3xl font-bold flex items-center gap-2'>
             {car.brand} {car.year} {car.name} ({car.model})
           </h1>
           <p className='text-2xl font-bold text-green-600 flex items-center gap-1'>
             <Wallet size={22} /> R
             {car.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
-          </p>
-          <div className='flex gap-3 flex-wrap'>
+          </p> */}
+          {/* <div className='flex gap-3 flex-wrap'>
             <Badge variant='default'>{car.brand}</Badge>
             <Badge variant='outline'>Seats: {car.Seats}</Badge>
             <Badge variant='outline'>Body: {car.bodyType}</Badge>
@@ -77,10 +77,10 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
               <span className='text-xl font-bold'>Mileage</span>{" "}
               {car.performance?.topSpeed} Km/h
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className='space-y-4'>
+      {/* <div className='space-y-4'>
         <div className='grid mt-6'>
           <Engine car={car} />
           <PerformanceEconomy car={car} />
@@ -88,7 +88,7 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
           <Features car={car} />
           <Specifications car={car} />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
