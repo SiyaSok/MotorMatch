@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "../accordion";
 import { CarTypeS } from "@/types";
+import { Separator } from "../separator";
 
 const PerformanceEconomy = ({ car }: { car: CarTypeS }) => {
   return (
@@ -20,19 +21,28 @@ const PerformanceEconomy = ({ car }: { car: CarTypeS }) => {
           </h2>
         </AccordionTrigger>
         <AccordionContent>
+          <Separator className='my-6' />
           <div className='p-2'>
             <ul className='space-y-1 text-sm'>
-              <li className='text-lg'>
-                Top Speed: {car.performance?.topSpeed} Km/h
+              <li className='text-lg flex justify-between'>
+                <span className='font-bold'>Top Speed:</span>{" "}
+                {car.performance?.topSpeed} Km/h
               </li>
-              <li className='text-lg'>
-                Acceleration: {car.performance?.Kph?.toFixed(2)} Kph
+              <li className='text-lg flex justify-between'>
+                <span className='font-bold'> Acceleration:</span>{" "}
+                {car.performance?.Kph?.toFixed(2)} Kph
               </li>
-              <li className='text-lg'>
-                Average: {car.economy?.average?.toFixed(2)} L/100km
+              <li className='text-lg flex justify-between'>
+                <span className='font-bold'>Average: </span>
+                {car.economy?.average?.toFixed(2)} L/100km
               </li>
-              <li className='text-lg'>CO2: {car.economy?.co2} g/km</li>
-              <li className='text-lg'>Range: {car.economy?.fualRange} km</li>
+              <li className='text-lg flex justify-between'>
+                <span className='font-bold'>CO2:</span> {car.economy?.co2} g/km
+              </li>
+              <li className='text-lg flex justify-between'>
+                <span className='font-bold'>Range:</span>{" "}
+                {car.economy?.fualRange} km
+              </li>
             </ul>
           </div>
         </AccordionContent>

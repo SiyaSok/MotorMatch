@@ -1,6 +1,6 @@
 /** @format */
 
-import { ShieldCheck } from "lucide-react";
+import { CircleCheckBig, CircleSlash2, ShieldCheck } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -22,19 +22,55 @@ const Safety = ({ car }: { car: CarTypeS }) => {
         <AccordionContent>
           <div className='p-2'>
             <ul className='space-y-1 text-sm'>
-              <li className='text-lg'>ABS: {car.safety?.abs ? "Yes" : "No"}</li>
-              <li className='text-lg'>EBD: {car.safety?.ebd ? "Yes" : "No"}</li>
-              <li className='text-lg'>
-                Stability Control: {car.safety?.stabilityControl ? "Yes" : "No"}
+              <li className='text-lg flex justify-between'>
+                {" "}
+                <span className='font-bold'>ABS: </span>
+                {car.safety?.abs ? (
+                  <CircleCheckBig className='text-green-600' />
+                ) : (
+                  <CircleSlash2 className='text-red-600' />
+                )}
               </li>
-              <li className='text-lg'>
-                Driver Airbag: {car.safety?.driverAirbag ? "Yes" : "No"}
+              <li className='text-lg flex justify-between'>
+                {" "}
+                <span className='font-bold'>EBD: </span>
+                {car.safety?.ebd ? (
+                  <CircleCheckBig className='text-green-600' />
+                ) : (
+                  <CircleSlash2 className='text-red-600' />
+                )}
               </li>
-              <li className='text-lg'>
-                Passenger Airbag: {car.safety?.passengerAirbag ? "Yes" : "No"}
+              <li className='text-lg flex justify-between'>
+                {" "}
+                <span className='font-bold'> Stability Control: </span>
+                {car.safety?.stabilityControl ? (
+                  <CircleCheckBig className='text-green-600' />
+                ) : (
+                  <CircleSlash2 className='text-red-600' />
+                )}
               </li>
-              <li className='text-lg'>
-                Airbag Count: {car.safety?.airbagQuantity}
+              <li className='text-lg flex justify-between'>
+                {" "}
+                <span className='font-bold'> Driver Airbag: </span>
+                {car.safety?.driverAirbag ? (
+                  <CircleCheckBig className='text-green-600' />
+                ) : (
+                  <CircleSlash2 className='text-red-600' />
+                )}
+              </li>
+              <li className='text-lg flex justify-between'>
+                {" "}
+                <span className='font-bold'> Passenger Airbag: </span>
+                {car.safety?.passengerAirbag ? (
+                  <CircleCheckBig className='text-green-600' />
+                ) : (
+                  <CircleSlash2 className='text-red-600' />
+                )}
+              </li>
+              <li className='text-lg flex justify-between'>
+                {" "}
+                <span className='font-bold'>Airbag Count:</span>
+                {car.safety?.airbagQuantity}
               </li>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 /** @format */
 
-import { Users } from "lucide-react";
+import { CircleCheckBig, CircleSlash2, Users } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -21,11 +21,21 @@ const Features = ({ car }: { car: CarTypeS }) => {
         </AccordionTrigger>
         <AccordionContent>
           <div className='mt-2 p-2'>
-            <ul className='grid grid-cols-2 gap-2 text-sm'>
+            <ul className='grid grid-cols- gap-2 text-sm'>
               {Object.entries(car.features || {}).map(([feature, value]) => (
-                <li className='text-lg' key={feature}>
+                <li
+                  className='text-lg flex justify-between gap-6'
+                  key={feature}>
                   {feature.replace(/([A-Z])/g, " $1")}:{" "}
-                  {typeof value === "boolean" ? (value ? "Yes" : "No") : value}
+                  {typeof value === "boolean" ? (
+                    value ? (
+                      <CircleCheckBig className='text-green-600' />
+                    ) : (
+                      <CircleSlash2 className='text-red-600' />
+                    )
+                  ) : (
+                    value
+                  )}
                 </li>
               ))}
             </ul>

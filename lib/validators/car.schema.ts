@@ -109,7 +109,13 @@ export const CarSchema = z.object({
   isNew: z.boolean().default(false),
   isCommercial: z.boolean().default(false),
 
-  dealer: z.union([z.string(), z.instanceof(Types.ObjectId)]),
+  dealer: z.object({
+    _id: z.string(),
+    userId: z.union([z.string(), z.instanceof(Types.ObjectId)]),
+    dealershipName: z.string(),
+    location: z.string(),
+    cars: z.array(z.string()).optional(),
+  }),
   manufacturer: z.union([z.string(), z.instanceof(Types.ObjectId)]),
 });
 

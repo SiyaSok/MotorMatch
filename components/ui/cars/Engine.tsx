@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "../accordion";
 import { CarTypeS } from "@/types";
+import { Separator } from "../separator";
 
 const Engine = ({ car }: { car: CarTypeS }) => {
   return (
@@ -20,29 +21,30 @@ const Engine = ({ car }: { car: CarTypeS }) => {
           </h2>
         </AccordionTrigger>
         <AccordionContent>
+          <Separator className='my-6' />
           <div className='p-2'>
             <ul className='space-y-1 text-sm'>
-              <li className=' text-lg'>
-                <span className='font-bold text-lg'>Power</span>:{" "}
+              <li className='flex justify-between text-lg '>
+                <span className='font-bold text-lg'>Power:</span>{" "}
                 {car.engine?.powerMax} HP @ {car.engine?.powerMaxrpm} rpm
               </li>
-              <li className=' text-lg'>
-                <span className='font-bold text-lg'>Torque</span>:{" "}
+              <li className='flex justify-between text-lg'>
+                <span className='font-bold text-lg'>Torque:</span>{" "}
                 {car.engine?.torqueMax} Nm @ {car.engine?.torqueMaxrpm} rpm
               </li>
-              <li className=' text-lg'>
+              <li className='flex justify-between text-lg'>
                 {" "}
-                <span className='font-bold text-lg'>Power</span>: Engine Size:{" "}
-                {car.engine?.engineSize} cc
+                <span className='font-bold text-lg'>Engine Size:</span>{" "}
+                {car.engine?.engineSize}
               </li>
-              <li className=' text-lg'>
+              <li className='flex justify-between text-lg'>
                 {" "}
-                <span className='font-bold text-lg'>Cylinders</span> :{" "}
+                <span className='font-bold text-lg'>Cylinders :</span>{" "}
                 {car.engine?.cylinders}
               </li>
-              <li className=' text-lg'>
+              <li className='flex justify-between text-lg'>
                 {" "}
-                <span className='font-bold text-lg'> Driven Wheels</span>:{" "}
+                <span className='font-bold text-lg'> Driven Wheels :</span>
                 {car.engine?.drivenWheels}
               </li>
             </ul>
