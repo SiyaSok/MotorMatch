@@ -16,6 +16,6 @@ export async function getCars(): Promise<CarTypeS[]> {
 }
 
 export const getSingleCars = async (id: string): Promise<CarTypeS> => {
-  const data = await Car.findById(id);
+  const data = await Car.findById(id).lean();
   return convertToPlainObject(data) as unknown as CarTypeS;
 };
