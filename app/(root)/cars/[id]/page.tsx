@@ -1,22 +1,17 @@
 /** @format */
 
-import connectDB from "@/config/db";
-import { convertToPlainObject } from "@/lib/utils";
-import Car from "@/models/Car";
-import { CarTypeS } from "@/types";
-
 import { Badge } from "@/components/ui/badge";
 import {
   Gauge,
   Wallet,
   Armchair,
-  // Car,
+  Car,
   Fuel,
   Cog,
   CircleGauge,
 } from "lucide-react";
 
-//import { getSingleCars } from "@/lib/actions/cars-action";
+import { getSingleCars } from "@/lib/actions/cars-action";
 import CarDisplayPageImages from "@/components/ui/cars/CarDisplayPageImages";
 import Engine from "@/components/ui/cars/Engine";
 import PerformanceEconomy from "@/components/ui/cars/PerformanceEconomy";
@@ -27,18 +22,11 @@ import Specifications from "@/components/ui/cars/Specifications";
 const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
 
-  // const car = await getSingleCars(id);
-
-  await connectDB();
-  const data = await Car.findById(id).lean();
-
-  const car = convertToPlainObject(data) as unknown as CarTypeS;
-
-  console.log(car);
+  const car = await getSingleCars(id);
   return (
     <section className='container mx-auto px-4 py-8'>
       <div className='grid md:grid-cols-2 gap-8'>
-        <CarDisplayPageImages car={car} />
+        <CarDisplayPageImages car={JSON.parse(JSON.stringify(car))} />
         <div className='space-y-4'>
           <h1 className='text-3xl font-bold flex items-center gap-2'>
             {car.brand} {car.year} {car.name} ({car.model})
