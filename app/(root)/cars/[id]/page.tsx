@@ -1,5 +1,8 @@
 /** @format */
 
+import connectDB from "@/config/db";
+import Car from "@/models/Car";
+
 // import { Badge } from "@/components/ui/badge";
 // import {
 //   Gauge,
@@ -24,12 +27,12 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
 
   // const car = await getSingleCars(id);
 
-  // await connectDB();
-  // const car = await Car.findById(id).lean();
+  await connectDB();
+  const car = await Car.findById(id).lean();
 
   // //  const property = ConvertToSerializableObject(propertyDocs);
 
-  // console.log(car);
+  console.log(car);
   return (
     <>{id}</>
     // <section className='container mx-auto px-4 py-8'>
