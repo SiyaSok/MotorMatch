@@ -1,7 +1,9 @@
 /** @format */
 
 import connectDB from "@/config/db";
+import { convertToPlainObject } from "@/lib/utils";
 import Car from "@/models/Car";
+import { CarTypeS } from "@/types";
 
 // import { Badge } from "@/components/ui/badge";
 // import {
@@ -28,14 +30,14 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
   // const car = await getSingleCars(id);
 
   await connectDB();
-  const car = await Car.findById(id).lean();
+  const data = await Car.findById(id).lean();
 
-  // //  const property = ConvertToSerializableObject(propertyDocs);
+  const car = convertToPlainObject(data) as unknown as CarTypeS;
 
   console.log(car);
   return (
-    <>{id}</>
-    // <section className='container mx-auto px-4 py-8'>
+    <>{car.name}</>
+    // <semction className='container mx-auto px-4 py-8'>
     //   <div className='grid md:grid-cols-2 gap-8'>
     //     <CarDisplayPageImages car={car} />
     //     <div className='space-y-4'>
