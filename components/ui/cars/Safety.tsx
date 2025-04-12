@@ -22,16 +22,20 @@ const Safety = ({ car }: { car: CarTypeS }) => {
         <AccordionContent>
           <div className='p-2'>
             <ul className='space-y-1 text-sm'>
-              <li>ABS: {car.safety?.abs ? "Yes" : "No"}</li>
-              <li>EBD: {car.safety?.ebd ? "Yes" : "No"}</li>
-              <li>
+              <li className='text-lg'>ABS: {car.safety?.abs ? "Yes" : "No"}</li>
+              <li className='text-lg'>EBD: {car.safety?.ebd ? "Yes" : "No"}</li>
+              <li className='text-lg'>
                 Stability Control: {car.safety?.stabilityControl ? "Yes" : "No"}
               </li>
-              <li>Driver Airbag: {car.safety?.driverAirbag ? "Yes" : "No"}</li>
-              <li>
+              <li className='text-lg'>
+                Driver Airbag: {car.safety?.driverAirbag ? "Yes" : "No"}
+              </li>
+              <li className='text-lg'>
                 Passenger Airbag: {car.safety?.passengerAirbag ? "Yes" : "No"}
               </li>
-              <li>Airbag Count: {car.safety?.airbagQuantity}</li>
+              <li className='text-lg'>
+                Airbag Count: {car.safety?.airbagQuantity}
+              </li>
             </ul>
           </div>
         </AccordionContent>

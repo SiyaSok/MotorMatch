@@ -29,23 +29,23 @@ const Specifications = ({ car }: { car: CarTypeS }) => {
         <AccordionContent>
           <div className='p-2'>
             <ul className='space-y-1 text-sm'>
-              <li>
+              <li className='text-lg'>
                 <Ruler size={16} className='inline' /> Length:{" "}
                 {car.specifications?.length} mm
               </li>
-              <li>
+              <li className='text-lg'>
                 <ArrowUpDown size={16} className='inline' /> Height:{" "}
                 {car.specifications?.height} mm
               </li>
-              <li>
+              <li className='text-lg'>
                 <MoveHorizontal size={16} className='inline' /> Wheel Base:{" "}
                 {car.specifications?.wheelBase} mm
               </li>
-              <li>
+              <li className='text-lg'>
                 <Info size={16} className='inline' /> Ground Clearance:{" "}
                 {car.specifications?.groundClearance} mm
               </li>
-              <li>
+              <li className='text-lg'>
                 <Zap size={16} className='inline' /> Load Volume:{" "}
                 {car.specifications?.loadVolumeCapacity} L
               </li>

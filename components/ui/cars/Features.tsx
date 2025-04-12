@@ -23,7 +23,7 @@ const Features = ({ car }: { car: CarTypeS }) => {
           <div className='mt-2 p-2'>
             <ul className='grid grid-cols-2 gap-2 text-sm'>
               {Object.entries(car.features || {}).map(([feature, value]) => (
-                <li key={feature}>
+                <li className='text-lg' key={feature}>
                   {feature.replace(/([A-Z])/g, " $1")}:{" "}
                   {typeof value === "boolean" ? (value ? "Yes" : "No") : value}
                 </li>
