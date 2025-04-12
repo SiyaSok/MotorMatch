@@ -11,7 +11,7 @@
 //   CircleGauge,
 // } from "lucide-react";
 
-import { getSingleCars } from "@/lib/actions/cars-action";
+// import { getSingleCars } from "@/lib/actions/cars-action";
 // import CarDisplayPageImages from "@/components/ui/cars/CarDisplayPageImages";
 // import Engine from "@/components/ui/cars/Engine";
 // import PerformanceEconomy from "@/components/ui/cars/PerformanceEconomy";
@@ -22,14 +22,14 @@ import { getSingleCars } from "@/lib/actions/cars-action";
 const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
 
-  const car = await getSingleCars(id);
+  // const car = await getSingleCars(id);
 
   // await connectDB();
   // const car = await Car.findById(id).lean();
 
   // //  const property = ConvertToSerializableObject(propertyDocs);
 
-  console.log(car);
+  // console.log(car);
   return (
     <>{id}</>
     // <section className='container mx-auto px-4 py-8'>
