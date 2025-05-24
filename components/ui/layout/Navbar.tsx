@@ -73,17 +73,27 @@ const Navbar = () => {
                 <Link
                   href='/'
                   className={`${
-                    pathname === "/" ? "bg-black" : " "
-                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                    pathname === "/" ? "bg-white text-black" : "text-white "
+                  }  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                   Home
                 </Link>
                 <Link
                   href='/cars'
                   className={`${
-                    pathname === "/cars" ? "bg-black" : " "
-                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                    pathname === "/cars" ? "bg-white text-black" : " text-white"
+                  }  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                   {" "}
                   Cars
+                </Link>
+                <Link
+                  href='/manufacturer'
+                  className={`${
+                    pathname === "/manufacturer"
+                      ? "bg-white text-black"
+                      : "text-white "
+                  }  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                  {" "}
+                  Manufacturers
                 </Link>
                 {/* {session && (
                   <Link

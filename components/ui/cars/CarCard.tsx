@@ -15,7 +15,7 @@ import { CarTypeS } from "@/types";
 const CarCard = ({ car }: { car: CarTypeS }) => {
   return (
     <Card className='w-full max-w-sm pt-0' key={car.name}>
-      <Link href={`cars/${car._id}`}>
+      <Link href={`/cars/${car._id}`}>
         <Image
           src={car.imageUrls?.[0] ?? "/images/default-car.jpg"} // fallback image
           alt={car.name}

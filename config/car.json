@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Corolla",
+    "brand": "Toyota",
+    "model": "Corolla Hybrid",
+    "year": 2023,
+    "mileage": 15000,
+    "Seats": 5,
+    "bodyType": "Sedan",
+    "fuelType": "hybrid",
+    "transmission": "cvt",
+    "price": 25000,
+    "imageUrls": [
+      "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM=",
+      "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM="
+    ],
+    "features": {
+      "electricWindows": "All",
+      "powerSteering": true,
+      "centralLocking": "Remote",
+      "airConditioning": true,
+      "bluetoothConnectivity": true,
+      "usbPort": true,
+      "alloyWheel": true
+    },
+    "specifications": {
+      "length": 4630,
+      "height": 1435,
+      "wheelBase": 2700,
+      "groundClearance": 150
+    },
+    "engine": {
+      "powerMax": 121,
+      "engineSize": 1.8,
+      "cylinders": 4,
+      "transmissionType": "CVT"
+    },
+    "available": true,
+    "isNewCar": false,
+    "isCommercial": false,
+    "dealer": "6831a4995ca1170f16e471ee",
+    "manufacturer": "6831a3bd5ca1170f16e471e6"
+  },
+  {
+    "name": "Mustang",
+    "brand": "Ford",
+    "model": "Mustang GT",
+    "year": 2022,
+    "mileage": 8000,
+    "Seats": 4,
+    "bodyType": "Sedan",
+    "fuelType": "petrol",
+    "transmission": "automatic",
+    "price": 42000,
+    "imageUrls": [
+      "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM=",
+      "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM="
+    ],
+    "features": {
+      "electricWindows": "All",
+      "powerSteering": true,
+      "airConditioning": true,
+      "bluetoothConnectivity": true,
+      "multiFunctionSteeringWheelControls": true
+    },
+    "engine": {
+      "powerMax": 450,
+      "engineSize": 5.0,
+      "cylinders": 8,
+      "transmissionType": "Automatic"
+    },
+    "available": true,
+    "isNewCar": true,
+    "isCommercial": false,
+    "dealer": "6831a4995ca1170f16e471ef",
+    "manufacturer": "6831a3bd5ca1170f16e471e7"
+  },
+  {
+    "name": "X5",
+    "brand": "BMW",
+    "model": "X5 xDrive40i",
+    "year": 2023,
+    "mileage": 5000,
+    "Seats": 5,
+    "bodyType": "SUV",
+    "fuelType": "petrol",
+    "transmission": "automatic",
+    "price": 65000,
+    "imageUrls": [
+      "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM=",
+      "https://assets.volkswagen.com/is/image/volkswagenag/Golf-Digital-Skins_HPB2?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTgwMCZoZWk9ODAwJmFsaWduPTAuMDAsMC4wMCZiZmM9b2ZmJjU1MGM="
+    ],
+    "features": {
+      "electricWindows": "All",
+      "powerSteering": true,
+      "airConditioning": true,
+      "bluetoothConnectivity": true,
+      "alloyWheel": true
+    },
+    "engine": {
+      "powerMax": 335,
+      "engineSize": 3.0,
+      "cylinders": 6,
+      "transmissionType": "Automatic"
+    },
+    "available": true,
+    "isNewCar": false,
+    "isCommercial": false,
+    "dealer": "6831a4995ca1170f16e471f0",
+    "manufacturer": "6831a3bd5ca1170f16e471e8"
+  }
+]

@@ -8,6 +8,12 @@ const ManufacturerSchema = new Schema(
     country: { type: String },
     logoUrl: { type: String },
     description: { type: String },
+    cars: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Car",
+      },
+    ], // New field for bidirectional relationship
   },
   { timestamps: true }
 );
