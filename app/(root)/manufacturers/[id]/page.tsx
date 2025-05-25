@@ -13,7 +13,7 @@ const ManufacturerDisplayPage = async (props: {
 
   return (
     <div>
-      <section className='py-6'>
+      <section>
         <div className='container-xl lg:container m-auto'>
           <div className='flex flex-col md:flex-row items-center gap-6'>
             <div>

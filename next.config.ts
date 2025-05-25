@@ -28,6 +28,11 @@ const nextConfig = {
         hostname: "www.ford.co.za",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "example.com",
+        pathname: "**",
+      },
     ],
   },
 };

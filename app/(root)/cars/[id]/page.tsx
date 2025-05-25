@@ -13,6 +13,7 @@ import Specifications from "@/components/ui/cars/Specifications";
 import { Separator } from "@/components/ui/separator";
 import CarSumIcon from "@/components/ui/cars/CarSumIcon";
 import Summary from "@/components/ui/cars/Summary";
+import Link from "next/link";
 
 const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
@@ -42,10 +43,12 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
             <Wallet size={22} /> R
             {car.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
           </p>
-          <p className='text-lg font-bold text-black flex items-center gap-1'>
+          <Link
+            href={`/dealer/${car.dealer._id}`}
+            className='text-lg font-bold text-black flex items-center gap-1'>
             <Pin size={18} />
             {car.dealer.dealershipName} - {car.dealer.location}
-          </p>
+          </Link>
 
           <div className='flex gap-3 flex-wrap'>
             <Badge variant='default'>{car.brand}</Badge>

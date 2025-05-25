@@ -28,7 +28,7 @@ const FeaturedCars = async () => {
               <Image
                 src={car.imageUrls?.[0] ?? "/car-placeholder.jpg"}
                 alt={`${car.brand} ${car.model}`}
-                className='w-full h-48 object-cover'
+                className='w-full h-58 object-cover'
                 width={500}
                 height={300}
                 loading='lazy'
@@ -72,7 +72,7 @@ const FeaturedCars = async () => {
 
               <div className='flex justify-between items-center mt-4'>
                 <span className='text-2xl font-bold'>
-                  ${car.price.toLocaleString()}
+                  R{car.price.toLocaleString()}
                 </span>
                 <Link
                   href={`/cars/${car._id}`}

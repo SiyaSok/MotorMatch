@@ -86,14 +86,24 @@ const Navbar = () => {
                   Cars
                 </Link>
                 <Link
-                  href='/manufacturer'
+                  href='/manufacturers'
                   className={`${
-                    pathname === "/manufacturer"
+                    pathname === "/manufacturers"
                       ? "bg-white text-black"
                       : "text-white "
                   }  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                   {" "}
                   Manufacturers
+                </Link>
+                <Link
+                  href='/dealers'
+                  className={`${
+                    pathname === "/dealers"
+                      ? "bg-white text-black"
+                      : "text-white "
+                  }  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                  {" "}
+                  Car Dealers
                 </Link>
                 {/* {session && (
                   <Link
