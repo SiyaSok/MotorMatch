@@ -28,7 +28,7 @@ const Navbar = () => {
   //     setAuthProvider();
   //   }, []);
   return (
-    <nav className='bg-black border-b border-white'>
+    <nav className='bg-black sticky top-0 z-50 shadow-md'>
       <div className='container mx-auto px-2 sm:px-6 lg:px-8'>
         <div className='relative flex h-20 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center md:hidden'>

@@ -1,10 +1,10 @@
 /** @format */
 
-import SearchBar from "@/components/Home/SearchBar";
-import FeaturedCars from "@/components/Home/FeaturedCars";
-import PopularManufacturers from "@/components/Home/PopularManufacturers";
-import TrustedDealers from "@/components/Home/TrustedDealers";
-import CallToAction from "@/components/Home/CallToAction";
+import CallToAction from "@/components/ui/Home/CallToAction";
+import FeaturedCars from "@/components/ui/Home/FeaturedCars";
+import PopularManufacturers from "@/components/ui/Home/PopularManufacturers";
+import SearchBar from "@/components/ui/Home/SearchBar";
+import TrustedDealers from "@/components/ui/Home/TrustedDealers";
 
 export default async function Home() {
   return (

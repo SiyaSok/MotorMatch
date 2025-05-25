@@ -16,11 +16,11 @@ const PopularManufacturers = async () => {
             <Link
               key={manufacturer._id}
               href={`/manufacturers/${manufacturer._id}`}
-              className='bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col items-center'>
+              className=' p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col items-center'>
               <Image
                 src={manufacturer.logoUrl || "/manufacturer-placeholder.png"}
                 alt={manufacturer.name}
-                className='h-16 w-16 object-contain mb-3'
+                className='h-16 w-16 object-contain mb-3 bg-black rounded-full'
                 width={64}
                 height={64}
               />

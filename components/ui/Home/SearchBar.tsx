@@ -7,7 +7,15 @@ const SearchBar = async () => {
   const manufacturers = await getManufacturers();
 
   return (
-    <div className='relative bg-gradient-to-r from-black to-black text-white py-20 px-4'>
+    <div
+      className='relative bg-gradient-to-r from-black to-black text-white py-20 px-4'
+      style={{
+        backgroundImage:
+          "url('https://img-ik.cars.co.za/homepage/tr:q-80,w-1920/banner-home-2_yPW8t_40k.jpg?updatedAt=1741685375723')",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center right",
+        backgroundSize: "cover",
+      }}>
       <div className='max-w-7xl mx-auto text-center'>
         <h1 className='text-4xl md:text-6xl font-bold mb-6'>
           Find Your Perfect Car
