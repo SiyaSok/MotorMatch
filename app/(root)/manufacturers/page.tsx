@@ -33,13 +33,13 @@ const ManufacturerPage = async () => {
           </p>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
             {manufacturer.map((manu) => (
-              <Link href={`/manufacturer/${manu._id}`} key={manu._id}>
+              <Link href={`/manufacturers/${manu._id}`} key={manu._id}>
                 <Card>
-                  <div className='flex justify-center mt-4'>
+                  <div className='flex justify-center mt-4 p-2'>
                     <Image
                       src={manu.logoUrl}
                       alt={manu.name}
-                      className='w-40 h-40 object-contain rounded-full bg-gray'
+                      className='w-40 h-40 object-contain rounded-full bg-black'
                       width={96}
                       height={96}
                     />

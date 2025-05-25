@@ -32,173 +32,162 @@ const Dealer = async (props: { params: Promise<{ id: string }> }) => {
   return (
     <div>
       <section>
-        <div className='container-xl lg:container m-auto pb-6'>
-          <div className='min-h-screen bg-gray-50'>
-            {/* Hero Section */}
-            <div className='relative bg-gray-900 text-white'>
-              <div className='absolute inset-0 bg-black'></div>
-              <div className='relative max-w-8xl mx-auto px-4 py-24 sm:px-6 lg:px-8'>
-                <div className='flex flex-col md:flex-row items-center gap-8'>
-                  <div className='w-32 h-32 rounded-full bg-white p-1 flex-shrink-0'>
-                    <Image
-                      width={128}
-                      height={128}
-                      src={dealer.dealerLogo}
-                      alt={`${dealer.dealershipName} logo`}
-                      className='w-full h-full object-contain rounded-full'
-                    />
+        <div className='relative bg-gray-900 text-white'>
+          <div className='absolute inset-0 bg-black'></div>
+          <div className='relative container-xl lg:container m-auto px-4 py-24 sm:px-6 lg:px-8'>
+            <div className='flex flex-col md:flex-row items-center gap-8'>
+              <div className='w-32 h-32 rounded-full bg-white p-1 flex-shrink-0'>
+                <Image
+                  width={128}
+                  height={128}
+                  src={dealer.dealerLogo}
+                  alt={`${dealer.dealershipName} logo`}
+                  className='w-full h-full object-contain rounded-full'
+                />
+              </div>
+              <div>
+                <div className='flex items-center gap-2'>
+                  <h1 className='text-4xl font-bold'>
+                    {dealer.dealershipName}
+                  </h1>
+                  {dealer.isVerified && (
+                    <BadgeCheck size={24} className='text-blue-400' />
+                  )}
+                </div>
+                <div className='flex items-center mt-2'>
+                  <div className='flex text-yellow-400'>
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={20}
+                        fill={
+                          i < Math.floor(dealer.rating ?? 0)
+                            ? "currentColor"
+                            : "none"
+                        }
+                        strokeWidth={
+                          i < Math.floor(dealer.rating ?? 0) ? 0 : 1.5
+                        }
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <div className='flex items-center gap-2'>
-                      <h1 className='text-4xl font-bold'>
-                        {dealer.dealershipName}
-                      </h1>
-                      {dealer.isVerified && (
-                        <BadgeCheck size={24} className='text-blue-400' />
+                  <span className='ml-2 text-gray-300'>
+                    {(dealer.rating ?? 0).toFixed(1)} ({dealer.established} -
+                    Present)
+                  </span>
+                </div>
+                <p className='mt-4 text-gray-300 max-w-2xl'>
+                  {dealer.description}
+                </p>
+                <div className='p-1'>
+                  <div className='space-y-1 flex flex-row gap-6'>
+                    <div className='flex flex-row'>
+                      <MapPin
+                        size={20}
+                        className='text-gray-300 mt-0.5 mr-3 flex-shrink-0'
+                      />
+                      <div>
+                        <p className='text-gray-300'>
+                          {dealer.address?.street ?? "N/A"}
+                          {dealer.address?.city ?? "N/A"},{" "}
+                          {dealer.address?.state ?? "N/A"}{" "}
+                          {dealer.address?.zipcode ?? "N/A"}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className='flex items-center'>
+                      <Phone
+                        size={20}
+                        className='text-gray-300 mr-3 flex-shrink-0'
+                      />
+                      <div>
+                        <a
+                          href={`tel:${dealer.phone}`}
+                          className='text-gray-300 hover:text-blue-800'>
+                          {dealer.phone}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className='flex items-center'>
+                      <Globe2
+                        size={20}
+                        className='text-gray-300 mr-3 flex-shrink-0'
+                      />
+                      <div>
+                        <a
+                          href={dealer.website}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='text-gray-300 hover:text-blue-800'>
+                          {dealer.website.replace(/^https?:\/\//, "")}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='mt-2'>
+                    <p className='font-medium mb-2'>Connect With Us</p>
+                    <div className='flex space-x-4'>
+                      {dealer.socialLinks?.facebook && (
+                        <a
+                          href={dealer.socialLinks.facebook}
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                          <Facebook
+                            size={20}
+                            className='text-gray-300 hover:text-blue-700'
+                          />
+                        </a>
+                      )}
+                      {dealer.socialLinks?.instagram && (
+                        <a
+                          href={dealer.socialLinks.instagram}
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                          <Instagram
+                            size={20}
+                            className='text-gray-300 hover:text-pink-600'
+                          />
+                        </a>
+                      )}
+                      {dealer.socialLinks?.twitter && (
+                        <a
+                          href={dealer.socialLinks.twitter}
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                          <Twitter
+                            size={20}
+                            className='text-gray-300 hover:text-blue-400'
+                          />
+                        </a>
+                      )}
+                      {dealer.socialLinks?.linkedin && (
+                        <a
+                          href={dealer.socialLinks.linkedin}
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                          <Linkedin
+                            size={20}
+                            className='text-gray-300 hover:text-blue-600'
+                          />
+                        </a>
                       )}
                     </div>
-                    <div className='flex items-center mt-2'>
-                      <div className='flex text-yellow-400'>
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            size={20}
-                            fill={
-                              i < Math.floor(dealer.rating ?? 0)
-                                ? "currentColor"
-                                : "none"
-                            }
-                            strokeWidth={
-                              i < Math.floor(dealer.rating ?? 0) ? 0 : 1.5
-                            }
-                          />
-                        ))}
-                      </div>
-                      <span className='ml-2 text-gray-300'>
-                        {(dealer.rating ?? 0).toFixed(1)} ({dealer.established}{" "}
-                        - Present)
-                      </span>
-                    </div>
-                    <p className='mt-4 text-gray-300 max-w-2xl'>
-                      {dealer.description}
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className='container-xl lg:container m-auto pb-6'>
+          <div className='min-h-screen bg-gray-50'>
+            {/* Hero Section */}
 
             {/* Main Content */}
             <div className='max-w-9xl mx-auto px-4 py-12 sm:px-6 lg:px-8'>
               <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                 {/* Left Column - Dealer Info */}
-                <div className='lg:col-span-1'>
-                  <div className='bg-white rounded-lg shadow-md p-6 sticky top-6'>
-                    <h2 className='text-xl font-bold mb-4'>
-                      Dealership Information
-                    </h2>
-
-                    <div className='space-y-4'>
-                      <div className='flex items-start'>
-                        <MapPin
-                          size={20}
-                          className='text-gray-500 mt-0.5 mr-3 flex-shrink-0'
-                        />
-                        <div>
-                          <p className='font-medium'>Address</p>
-                          <p className='text-gray-600'>
-                            {dealer.address?.street ?? "N/A"}
-                            <br />
-                            {dealer.address?.city ?? "N/A"},{" "}
-                            {dealer.address?.state ?? "N/A"}{" "}
-                            {dealer.address?.zipcode ?? "N/A"}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className='flex items-center'>
-                        <Phone
-                          size={20}
-                          className='text-gray-500 mr-3 flex-shrink-0'
-                        />
-                        <div>
-                          <p className='font-medium'>Phone</p>
-                          <a
-                            href={`tel:${dealer.phone}`}
-                            className='text-blue-600 hover:text-blue-800'>
-                            {dealer.phone}
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className='flex items-center'>
-                        <Globe2
-                          size={20}
-                          className='text-gray-500 mr-3 flex-shrink-0'
-                        />
-                        <div>
-                          <p className='font-medium'>Website</p>
-                          <a
-                            href={dealer.website}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='text-blue-600 hover:text-blue-800'>
-                            {dealer.website.replace(/^https?:\/\//, "")}
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className='pt-4'>
-                        <p className='font-medium mb-2'>Connect With Us</p>
-                        <div className='flex space-x-4'>
-                          {dealer.socialLinks?.facebook && (
-                            <a
-                              href={dealer.socialLinks.facebook}
-                              target='_blank'
-                              rel='noopener noreferrer'>
-                              <Facebook
-                                size={20}
-                                className='text-gray-600 hover:text-blue-700'
-                              />
-                            </a>
-                          )}
-                          {dealer.socialLinks?.instagram && (
-                            <a
-                              href={dealer.socialLinks.instagram}
-                              target='_blank'
-                              rel='noopener noreferrer'>
-                              <Instagram
-                                size={20}
-                                className='text-gray-600 hover:text-pink-600'
-                              />
-                            </a>
-                          )}
-                          {dealer.socialLinks?.twitter && (
-                            <a
-                              href={dealer.socialLinks.twitter}
-                              target='_blank'
-                              rel='noopener noreferrer'>
-                              <Twitter
-                                size={20}
-                                className='text-gray-600 hover:text-blue-400'
-                              />
-                            </a>
-                          )}
-                          {dealer.socialLinks?.linkedin && (
-                            <a
-                              href={dealer.socialLinks.linkedin}
-                              target='_blank'
-                              rel='noopener noreferrer'>
-                              <Linkedin
-                                size={20}
-                                className='text-gray-600 hover:text-blue-600'
-                              />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Right Column - Inventory */}
 

@@ -11,6 +11,16 @@ const ManufacturerDisplayPage = async (props: {
 
   const manufacturer = await getSingleManufacturer(id);
 
+  console.log("Manufacturer Data:", manufacturer);
+  if (!manufacturer || Object.keys(manufacturer).length === 0) {
+    return (
+      <div className='container-xl lg:container m-auto py-6'>
+        <h1 className='text-2xl font-bold'>Manufacturer Not Found</h1>
+        <p className='mt-4'>The requested manufacturer does not exist.</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <section>

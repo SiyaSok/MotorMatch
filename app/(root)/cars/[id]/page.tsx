@@ -21,9 +21,11 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
   const car = await getSingleCars(id);
   return (
     <section className='container mx-auto px-4 py-8'>
-      <div className='grid md:grid-cols-2 gap-8'>
+      <div className='flex flex-col-reverse md:grid md:grid-cols-2 gap-8'>
         <div>
-          <CarDisplayPageImages car={JSON.parse(JSON.stringify(car))} />
+          <div className='hidden md:block'>
+            <CarDisplayPageImages car={JSON.parse(JSON.stringify(car))} />
+          </div>
           <div className='space-y-4'>
             <div className='grid mt-6'>
               <Engine car={car} />
@@ -59,6 +61,9 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
             <Badge variant='outline'>
               Mileage: {car.mileage.toLocaleString()} Km
             </Badge>
+          </div>
+          <div className='block md:hidden'>
+            <CarDisplayPageImages car={JSON.parse(JSON.stringify(car))} />
           </div>
           <Separator className='my-6' />
           <CarSumIcon car={car} />
