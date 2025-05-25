@@ -33,6 +33,36 @@ const nextConfig = {
         hostname: "example.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "www.ferrari.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.tesla.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.hyundai.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.porsche.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "image.blob.ix.co.za",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "**",
+      },
     ],
   },
 };

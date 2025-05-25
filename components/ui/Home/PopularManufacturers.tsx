@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PopularManufacturers = async () => {
-  const manufacturers = await getManufacturers();
+  const manufacturers = await getManufacturers(6);
 
   return (
     <section className='py-16 px-4 bg-gray-100'>
@@ -20,9 +20,10 @@ const PopularManufacturers = async () => {
               <Image
                 src={manufacturer.logoUrl || "/manufacturer-placeholder.png"}
                 alt={manufacturer.name}
-                className='h-16 w-16 object-contain mb-3 bg-black rounded-full'
-                width={64}
-                height={64}
+                className='h-20 w-20 object-contain mb-3'
+                width={0}
+                height={0}
+                sizes='100vw'
               />
               <h3 className='font-medium text-gray-900'>{manufacturer.name}</h3>
               <p className='text-sm text-gray-500 mt-1'>

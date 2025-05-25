@@ -7,9 +7,9 @@ import Car from "@/models/Car";
 import { convertToPlainObject } from "../utils";
 import { CarTypeS } from "@/types";
 import "@/models/Dealer"; //
-export async function getCars(): Promise<CarTypeS[]> {
+export async function getCars(limit: number = 3): Promise<CarTypeS[]> {
   await connectDB();
-  const cars = await Car.find({}).limit(8).lean();
+  const cars = await Car.find().limit(limit).lean();
   return convertToPlainObject(cars) as unknown as CarTypeS[];
 }
 

@@ -8,9 +8,13 @@ import Manufacturer from "@/models/Manufacturer";
 import "@/models/Car"; //
 import { manufacturer } from "@/types";
 
-export async function getManufacturers() {
+export async function getManufacturers(
+  limit: number = 10
+): Promise<manufacturer[]> {
   await connectDB();
-  const manufacturersWithCars = await Manufacturer.find().populate("cars");
+  const manufacturersWithCars = await Manufacturer.find()
+    .limit(limit)
+    .populate("cars");
   return convertToPlainObject(manufacturersWithCars);
 }
 

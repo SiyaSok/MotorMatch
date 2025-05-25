@@ -37,7 +37,7 @@ const ManufacturerPage = async () => {
                 <Card>
                   <div className='flex justify-center mt-4 p-2'>
                     <Image
-                      src={manu.logoUrl}
+                      src={manu.logoUrl || "/placeholder-image.png"}
                       alt={manu.name}
                       className='w-40 h-40 object-contain rounded-full bg-black'
                       width={96}
