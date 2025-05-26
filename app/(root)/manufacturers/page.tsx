@@ -39,9 +39,11 @@ const ManufacturerPage = async () => {
                     <Image
                       src={manu.logoUrl || "/placeholder-image.png"}
                       alt={manu.name}
-                      className='w-40 h-40 object-contain rounded-full bg-black'
-                      width={96}
-                      height={96}
+                      className='w-40 h-40 object-contain'
+                      width={0}
+                      height={0}
+                      sizes='100vw'
+                      loading='lazy'
                     />
                   </div>
                   <CardContent className='mt-4'>

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FeaturedCars = async () => {
-  const featuredCars = await getCars();
+  const featuredCars = await getCars(4);
 
   return (
     <section className='py-16 px-4 max-w-7xl mx-auto'>
