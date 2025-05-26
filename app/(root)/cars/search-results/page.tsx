@@ -30,16 +30,6 @@ const SearchPage = async (searchParams: { searchParams: paramsType }) => {
     minPriceRange,
   } = await searchParams.searchParams;
 
-  console.log("Search Params:", {
-    manufacturers,
-    car,
-    year,
-    model,
-    bodyType,
-    maxPriceRange,
-    minPriceRange,
-  });
-
   await connectDB();
 
   const buildSearchQuery = () => {

@@ -7,7 +7,7 @@ const SearchBar = () => {
     <div
       className='relative bg-gradient-to-r from-black to-black text-white py-20 px-4'
       style={{
-        backgroundImage: "url('/bg4.png')",
+        backgroundImage: "url('/bg11.jpg')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center right",
         backgroundSize: "cover",
