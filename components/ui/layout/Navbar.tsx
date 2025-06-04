@@ -2,31 +2,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-// import logo from "@/assets/images/logo-white.png";
-// import profileDefault from "@/assets/images/profile.png";
-// import { FaGoogle } from "react-icons/fa";
-
 import { useState } from "react";
+// import UserButton from "./UserButton";
 // import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 // import UnReadMessgaeCount from "./UnReadMessgaeCount";
 
 const Navbar = () => {
-  //   const { data: session } = useSession();
   const [isMoblieMenuOpen, setIsMoblieMenuOpen] = useState(false);
-  //   const [isProfileMenuOpen, setisProfileMenuOpen] = useState(false);
-  //   const [providers, setProviders] = useState(null);
 
   const pathname = usePathname();
-
-  //   useEffect(() => {
-  //     const setAuthProvider = async () => {
-  //       const res = await getProviders();
-
-  //       setProviders(res);
-  //     };
-  //     setAuthProvider();
-  //   }, []);
   return (
     <nav className='bg-black sticky top-0 z-50 shadow-md'>
       <div className='container mx-auto px-2 sm:px-6 lg:px-8'>
@@ -128,7 +112,7 @@ const Navbar = () => {
           </div>
 
           {/* <!-- Right Side Menu (Logged Out) --> */}
-
+          {/* <UserButton /> */}
           {/* <!-- Right Side Menu (Logged In) --> */}
         </div>
       </div>

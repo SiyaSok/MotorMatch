@@ -2,10 +2,11 @@
 
 import { z } from "zod";
 import { CarSchema } from "./car.schema";
+import { userSchema } from "./user.schema";
 
 export const dealerSchema = z.object({
   _id: z.string().optional(),
-  userId: z.string(), // ObjectId as string
+  users: z.array(userSchema), // ObjectId as string
   dealerLogo: z.string(),
   dealershipName: z.string(),
   address: z

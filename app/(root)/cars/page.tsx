@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import SkeletonCarCard from "@/components/ui/Skeletons/SkeletonCard";
 
 const Cars = async () => {
-  const cars = await getCars();
+  const cars = await getCars(100);
 
   return (
     <section className='py-6'>

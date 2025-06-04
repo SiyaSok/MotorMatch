@@ -9,7 +9,6 @@ import { CarTypeS } from "@/types";
 import "@/models/Dealer"; //
 export async function getCars(limit: number = 3): Promise<CarTypeS[]> {
   await connectDB();
-  console.log(limit, "limit in getCars");
   const cars = await Car.find().limit(limit).lean();
   return convertToPlainObject(cars) as unknown as CarTypeS[];
 }

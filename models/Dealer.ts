@@ -5,7 +5,7 @@ import { Schema, model, models } from "mongoose";
 const DealerSchema = new Schema(
   {
     dealerLogo: { type: String, required: true, unique: true },
-    userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    users: [{ type: Schema.Types.ObjectId, ref: "User" }],
     dealershipName: { type: String, required: true },
     address: {
       street: { type: String },

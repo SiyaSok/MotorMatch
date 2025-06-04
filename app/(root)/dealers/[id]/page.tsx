@@ -34,7 +34,7 @@ const Dealer = async (props: { params: Promise<{ id: string }> }) => {
       <section>
         <div className='relative bg-gray-900 text-white'>
           <div className='absolute inset-0 bg-black'></div>
-          <div className='relative container-xl lg:container m-auto px-4 py-24 sm:px-6 lg:px-8'>
+          <div className='relative container-xl lg:container m-auto px-4 py-30 sm:px-6 lg:px-8'>
             <div className='flex flex-col md:flex-row items-center gap-8'>
               <div className='w-32 h-32 rounded-full bg-white p-1 flex-shrink-0'>
                 <Image
@@ -79,16 +79,16 @@ const Dealer = async (props: { params: Promise<{ id: string }> }) => {
                 <p className='mt-4 text-gray-300 max-w-2xl'>
                   {dealer.description}
                 </p>
-                <div className='p-1'>
-                  <div className='space-y-1 flex flex-row gap-6'>
-                    <div className='flex flex-row'>
+                <div className='p-1 absolute bottom-3 left-46  text-xs font-semibold '>
+                  <div className='space-y-1 flex flex-row gap-6 items-center'>
+                    <div className='flex flex-row items-center'>
                       <MapPin
                         size={20}
                         className='text-gray-300 mt-0.5 mr-3 flex-shrink-0'
                       />
                       <div>
                         <p className='text-gray-300'>
-                          {dealer.address?.street ?? "N/A"}
+                          {dealer.address?.street ?? "N/A"}{" "}
                           {dealer.address?.city ?? "N/A"},{" "}
                           {dealer.address?.state ?? "N/A"}{" "}
                           {dealer.address?.zipcode ?? "N/A"}
@@ -125,55 +125,50 @@ const Dealer = async (props: { params: Promise<{ id: string }> }) => {
                         </a>
                       </div>
                     </div>
-                  </div>
-                  <div className='mt-2'>
-                    <p className='font-medium mb-2'>Connect With Us</p>
-                    <div className='flex space-x-4'>
-                      {dealer.socialLinks?.facebook && (
-                        <a
-                          href={dealer.socialLinks.facebook}
-                          target='_blank'
-                          rel='noopener noreferrer'>
-                          <Facebook
-                            size={20}
-                            className='text-gray-300 hover:text-blue-700'
-                          />
-                        </a>
-                      )}
-                      {dealer.socialLinks?.instagram && (
-                        <a
-                          href={dealer.socialLinks.instagram}
-                          target='_blank'
-                          rel='noopener noreferrer'>
-                          <Instagram
-                            size={20}
-                            className='text-gray-300 hover:text-pink-600'
-                          />
-                        </a>
-                      )}
-                      {dealer.socialLinks?.twitter && (
-                        <a
-                          href={dealer.socialLinks.twitter}
-                          target='_blank'
-                          rel='noopener noreferrer'>
-                          <Twitter
-                            size={20}
-                            className='text-gray-300 hover:text-blue-400'
-                          />
-                        </a>
-                      )}
-                      {dealer.socialLinks?.linkedin && (
-                        <a
-                          href={dealer.socialLinks.linkedin}
-                          target='_blank'
-                          rel='noopener noreferrer'>
-                          <Linkedin
-                            size={20}
-                            className='text-gray-300 hover:text-blue-600'
-                          />
-                        </a>
-                      )}
-                    </div>
+                    {dealer.socialLinks?.facebook && (
+                      <a
+                        href={dealer.socialLinks.facebook}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <Facebook
+                          size={20}
+                          className='text-gray-300 hover:text-blue-700'
+                        />
+                      </a>
+                    )}
+                    {dealer.socialLinks?.instagram && (
+                      <a
+                        href={dealer.socialLinks.instagram}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <Instagram
+                          size={20}
+                          className='text-gray-300 hover:text-pink-600'
+                        />
+                      </a>
+                    )}
+                    {dealer.socialLinks?.twitter && (
+                      <a
+                        href={dealer.socialLinks.twitter}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <Twitter
+                          size={20}
+                          className='text-gray-300 hover:text-blue-400'
+                        />
+                      </a>
+                    )}
+                    {dealer.socialLinks?.linkedin && (
+                      <a
+                        href={dealer.socialLinks.linkedin}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <Linkedin
+                          size={20}
+                          className='text-gray-300 hover:text-blue-600'
+                        />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

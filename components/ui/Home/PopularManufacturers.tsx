@@ -16,7 +16,7 @@ const PopularManufacturers = async () => {
             <Link
               key={manufacturer._id}
               href={`/manufacturers/${manufacturer._id}`}
-              className=' p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col items-center'>
+              className='bg-white hover:bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col items-center'>
               <Image
                 src={manufacturer.logoUrl || "/manufacturer-placeholder.png"}
                 alt={manufacturer.name}

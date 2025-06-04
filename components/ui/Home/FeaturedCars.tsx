@@ -76,7 +76,7 @@ const FeaturedCars = async () => {
                 </span>
                 <Link
                   href={`/cars/${car._id}`}
-                  className='bg-black hover:bg-black text-white px-4 py-2 rounded-md transition-colors'>
+                  className='bg-black hover:bg-black text-white px-8 py-4 rounded-md transition-colors'>
                   View Details
                 </Link>
               </div>

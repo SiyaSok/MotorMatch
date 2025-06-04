@@ -102,7 +102,7 @@ const DealerMainPage = async () => {
                       <MapPin size={16} className='mr-2 text-gray-400' />
                       <span>
                         {dealer.address?.street || "Address not specified"},{" "}
-                        {dealer.location}
+                        {dealer.location}{" "}
                       </span>
                     </div>
 

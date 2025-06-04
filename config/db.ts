@@ -4,20 +4,18 @@ import mongoose from "mongoose";
 
 let connected = false;
 
-const connectDB = async (): Promise<void> => {
+const connectDB = async () => {
   mongoose.set("strictQuery", true);
-
   if (connected) {
     console.log("Connected to Mongoose");
     return;
   }
-
   try {
-    const mongoUri = process.env.MONGODB_URI;
-    if (!mongoUri) {
-      throw new Error("MONGODB_URI is not defined in environment variables");
+    const uri = process.env.MONGODB_URI;
+    if (!uri) {
+      throw new Error("MONGODB_URI environment variable is not defined");
     }
-    await mongoose.connect(mongoUri);
+    await mongoose.connect(uri);
     connected = true;
     console.log("Connected to MongoDB");
   } catch (error) {
