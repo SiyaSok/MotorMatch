@@ -3,9 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-// import UserButton from "./UserButton";
-// import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-// import UnReadMessgaeCount from "./UnReadMessgaeCount";
+import UserButton from "./UserButton";
 
 const Navbar = () => {
   const [isMoblieMenuOpen, setIsMoblieMenuOpen] = useState(false);
@@ -112,7 +110,7 @@ const Navbar = () => {
           </div>
 
           {/* <!-- Right Side Menu (Logged Out) --> */}
-          {/* <UserButton /> */}
+          <UserButton />
           {/* <!-- Right Side Menu (Logged In) --> */}
         </div>
       </div>

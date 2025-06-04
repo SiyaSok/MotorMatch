@@ -6,6 +6,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compareSync } from "bcrypt-ts-edge";
 import clientPromise from "./lib/db";
 import { authConfig } from "./auth.config";
+import connectDB from "./config/db";
+import User from "./models/User";
 
 export const config: NextAuthConfig = {
   pages: {
@@ -27,11 +29,9 @@ export const config: NextAuthConfig = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        const client = await clientPromise;
-        const db = client.db(); // Your database name
-        const usersCollection = db.collection("users");
+        await connectDB();
 
-        const user = await usersCollection.findOne({
+        const user = await User.findOne({
           email: credentials.email as string,
         });
 
