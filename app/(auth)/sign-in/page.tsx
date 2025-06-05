@@ -20,6 +20,8 @@ const SignInPage = async (props: {
 
   const session = await auth();
 
+  console.log("callbackUrl", callbackUrl);
+
   if (session) {
     return redirect(callbackUrl || "/");
   }
