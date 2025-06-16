@@ -47,7 +47,6 @@ export default function RootLayout({
       <html lang='en'>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {/* <Navbar /> */}
           <Header />
           <div>{children}</div>
           <ToastContainer />

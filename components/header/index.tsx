@@ -9,7 +9,7 @@ const Header = () => {
         <div className='flex-start'>
           <Link href='/' className='flex-start'>
             <span className='hidden text-white lg:block font-bold text-2xl ml-3'>
-              Moto Match
+              MotoMatch
             </span>
           </Link>
         </div>
