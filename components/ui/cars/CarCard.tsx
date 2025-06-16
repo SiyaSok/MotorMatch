@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription } from "../card";
 import { Badge } from "../badge";
 import Link from "next/link";
 import { CarTypeS } from "@/types";
-import { Fuel, Gauge, Settings } from "lucide-react";
+import { Fuel, Gauge, HeartIcon, Settings } from "lucide-react";
 
 const CarCard = ({ car }: { car: CarTypeS }) => {
   return (
@@ -19,8 +19,10 @@ const CarCard = ({ car }: { car: CarTypeS }) => {
           sizes='100vw'
           className='w-full h-58 object-cover rounded-t-xl'
         />
-
-        <div className='absolute top-2 right-2 bg-black text-white px-2 py-1 rounded-md text-sm'>
+        <div className='absolute top-2 right-2  px-2 py-1 rounded-md text-sm'>
+          <HeartIcon size={20} className='inline mr-1 ' fill='white' />
+        </div>
+        <div className='absolute top-2 left-2 bg-black text-white px-2 py-1 rounded-md text-sm'>
           {car.year >= new Date().getFullYear() ? "New" : "Used"}
         </div>
       </Link>
@@ -38,7 +40,7 @@ const CarCard = ({ car }: { car: CarTypeS }) => {
                 {car.bodyType}
               </div> */}
             </div>
-            <div className='my-4 flex flex-wrap gap-2'>
+            <div className='my-4 flex flex-wrap gap-3'>
               <Badge className='bg-black' variant='default'>
                 {car.bodyType.charAt(0).toUpperCase() + car.bodyType.slice(1)}
               </Badge>
@@ -54,20 +56,20 @@ const CarCard = ({ car }: { car: CarTypeS }) => {
               </Badge>
             </div>
 
-            <div className='my-4 flex flex-wrap gap-2'>
+            <div className='my-4 flex flex-wrap gap-3'>
               <div className='flex items-center text-sm text-gray-600'>
                 {car.engine && (
                   <>
-                    <Gauge size={16} className='mr-1' /> {car.engine.powerMax}{" "}
+                    <Gauge size={22} className='mr-1' /> {car.engine.powerMax}{" "}
                   </>
                 )}
                 HP
               </div>
               <div className='flex items-center text-sm text-gray-600'>
-                <Fuel size={16} className='mr-1' /> {car.fuelType}
+                <Fuel size={22} className='mr-1' /> {car.fuelType}
               </div>
               <div className='flex items-center text-sm text-gray-600'>
-                <Settings size={16} className='mr-1' /> {car.transmission}
+                <Settings size={22} className='mr-1' /> {car.transmission}
               </div>
             </div>
 
@@ -77,7 +79,7 @@ const CarCard = ({ car }: { car: CarTypeS }) => {
               </span>
               <Link
                 href={`/cars/${car._id}`}
-                className='bg-black hover:bg-black text-white px-4 py-2 rounded-md transition-colors'>
+                className='bg-black hover:bg-black text-white px-8 py-4 rounded-md transition-colors'>
                 View Details
               </Link>
             </div>

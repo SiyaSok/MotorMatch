@@ -7,21 +7,18 @@ import CredentialsSignInForm from "./credentials-signin-form";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
-/** @format */
 export const metadata: Metadata = {
   title: "Sign In",
 };
+
 const SignInPage = async (props: {
   searchParams: Promise<{
-    callbackUrl: string;
+    callbackUrl?: string;
   }>;
 }) => {
   const { callbackUrl } = await props.searchParams;
 
   const session = await auth();
-
-  console.log("callbackUrl", callbackUrl);
-
   if (session) {
     return redirect(callbackUrl || "/");
   }
@@ -36,7 +33,7 @@ const SignInPage = async (props: {
           <CardTitle className='text-center'>Sign in to your account</CardTitle>
         </CardHeader>
         <CardContent className='space-y-4'>
-          <CredentialsSignInForm />
+          <CredentialsSignInForm callbackUrl={callbackUrl} />
         </CardContent>
       </Card>
     </div>

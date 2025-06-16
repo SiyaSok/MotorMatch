@@ -9,7 +9,7 @@ const FeaturedCars = async () => {
   const featuredCars = await getCars(3);
 
   return (
-    <section className='py-16 px-4 max-w-7xl mx-auto'>
+    <section className='py-20 px-4 max-w-7xl mx-auto'>
       <div className='flex justify-between items-center mb-8'>
         <h2 className='text-3xl font-bold text-gray-900'>Featured Vehicles</h2>
         <Link
@@ -53,20 +53,20 @@ const FeaturedCars = async () => {
                 </div>
               </div>
 
-              <div className='my-4 flex flex-wrap gap-2'>
+              <div className='my-4 flex flex-wrap gap-3'>
                 <div className='flex items-center text-sm text-gray-600'>
                   {car.engine && (
                     <>
-                      <Gauge size={16} className='mr-1' /> {car.engine.powerMax}{" "}
+                      <Gauge size={20} className='mr-1' /> {car.engine.powerMax}{" "}
                     </>
                   )}
                   HP
                 </div>
                 <div className='flex items-center text-sm text-gray-600'>
-                  <Fuel size={16} className='mr-1' /> {car.fuelType}
+                  <Fuel size={20} className='mr-1' /> {car.fuelType}
                 </div>
                 <div className='flex items-center text-sm text-gray-600'>
-                  <Settings size={16} className='mr-1' /> {car.transmission}
+                  <Settings size={20} className='mr-1' /> {car.transmission}
                 </div>
               </div>
 

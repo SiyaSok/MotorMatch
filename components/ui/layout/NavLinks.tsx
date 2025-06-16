@@ -16,7 +16,7 @@ const NavLinks = () => {
 
   return (
     <div className='hidden md:ml-6 md:block'>
-      <div className='flex space-x-2'>
+      <div className='flex '>
         {links.map((link) => (
           <Link
             key={link.href}
