@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { UserIcon } from "lucide-react";
+import { Heart, LogOutIcon, User2Icon, UserIcon } from "lucide-react";
 
 const UserButton = async () => {
   const session = await auth();
@@ -50,10 +50,27 @@ const UserButton = async () => {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuItem className='p-0 mb-1'>
+            <Link href='/profile' className=''>
+              <Button variant='ghost' className='w-full'>
+                <User2Icon className='mr-1' />
+                Profile
+              </Button>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem className='p-0 mb-1'>
+            <Link href='/liked'>
+              <Button variant='ghost' className='w-full'>
+                <Heart className='mr-1' />
+                Wish List
+              </Button>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem className='p-0 mb-1'>
             <form action={signOutUser} className='w-full'>
               <Button
                 className='w-full py-4 px-2 h-4 justify-start'
                 variant='ghost'>
+                <LogOutIcon className='mr-1' />
                 Sign Out
               </Button>
             </form>

@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription } from "../card";
 import { Badge } from "../badge";
 import Link from "next/link";
 import { CarTypeS } from "@/types";
-import { Fuel, Gauge, HeartIcon, Settings } from "lucide-react";
+import { Fuel, Gauge, Settings } from "lucide-react";
+import AddToWishListButton from "./AddToWishListButton";
 
 const CarCard = ({ car }: { car: CarTypeS }) => {
   return (
@@ -19,23 +20,22 @@ const CarCard = ({ car }: { car: CarTypeS }) => {
           sizes='100vw'
           className='w-full h-58 object-cover rounded-t-xl'
         />
-        <div className='absolute top-2 right-2  px-2 py-1 rounded-md text-sm'>
-          <HeartIcon size={20} className='inline mr-1 ' fill='white' />
-        </div>
+
         <div className='absolute top-2 left-2 bg-black text-white px-2 py-1 rounded-md text-sm'>
           {car.year >= new Date().getFullYear() ? "New" : "Used"}
         </div>
       </Link>
-      <CardContent className='space-y-2'>
+      <CardContent className='space-y-2 relative'>
         <CardDescription>{car.brand}</CardDescription>
-
+        <AddToWishListButton car={car} />
         <div>
           <div className=''>
-            <div className='flex justify-between items-start'>
+            <div className='flex justify-between items-start '>
               <div>
                 <h3 className='text-xl font-bold'>{car.model}</h3>
                 <p className='text-gray-600'>{car.year}</p>
               </div>
+
               {/* <div className='bg-blue-100 text-black px-2 py-1 rounded-md text-sm'>
                 {car.bodyType}
               </div> */}

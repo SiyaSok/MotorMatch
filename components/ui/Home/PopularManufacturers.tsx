@@ -9,7 +9,7 @@ const PopularManufacturers = async () => {
 
   return (
     <section className='py-16 px-4 bg-gray-100'>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-7xl container-xl lg:container m-auto'>
         <h2 className='text-3xl font-bold text-gray-900 mb-8'>Shop by Brand</h2>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6'>
           {manufacturers.map((manufacturer) => (

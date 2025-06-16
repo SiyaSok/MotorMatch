@@ -14,7 +14,7 @@ const TrustedDealers = async () => {
   const topDealers = await getDealers();
 
   return (
-    <section className='py-16 px-4 max-w-7xl mx-auto'>
+    <section className='py-16 px-4 max-w-7xl container-xl lg:container m-auto'>
       <h2 className='text-3xl font-bold text-gray-900 mb-8'>Trusted Dealers</h2>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {topDealers.map((dealer) => (

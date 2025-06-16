@@ -5,7 +5,7 @@ import InfoBox from "./InfoBox";
 const InfoBoxes = () => {
   return (
     <section>
-      <div className='max-w-7xl mx-auto my-20'>
+      <div className='max-w-7xl container-xl lg:container m-auto my-20'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg'>
           <InfoBox
             heading={"Compare Cars"}

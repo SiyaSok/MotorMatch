@@ -12,7 +12,7 @@ const SearchBar = () => {
         backgroundPosition: "center right",
         backgroundSize: "cover",
       }}>
-      <div className='max-w-7xl mx-auto text-start py-2'>
+      <div className='max-w-7xl container-xl lg:container m-auto text-start py-2'>
         <h1 className='text-4xl md:text-6xl font-bold mb-6 md:px-4'>
           Find Your Perfect Car
         </h1>

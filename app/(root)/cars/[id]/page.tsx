@@ -37,11 +37,11 @@ const CarDisplayPage = async (props: { params: Promise<{ id: string }> }) => {
           </div>
         </div>
 
-        <div className='space-y-4'>
+        <div className='space-y-4 '>
           <h1 className='text-3xl font-bold flex items-center gap-2'>
             {car.brand} {car.year} {car.name} ({car.model})
           </h1>
-          <p className='text-2xl font-bold text-green-600 flex items-center gap-1'>
+          <p className='text-2xl font-bold text-green-600 flex items-center gap-1 relative'>
             <Wallet size={22} /> R
             {car.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
           </p>

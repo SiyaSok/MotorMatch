@@ -8,6 +8,7 @@ import { hashSync } from "bcrypt-ts-edge";
 import { FormatError } from "../utils";
 import { signInFormSchema, signUpFormSchema } from "../validators/user.schema";
 import User from "@/models/User";
+import { revalidatePath } from "next/cache";
 export async function signInWithCredentials(
   prevState: unknown,
   formData: FormData
@@ -31,6 +32,7 @@ export async function signInWithCredentials(
 
 export async function signOutUser() {
   await signOut();
+  revalidatePath("/", "layout");
 }
 
 export async function signUpUser(prevState: unknown, formData: FormData) {
