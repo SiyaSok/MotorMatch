@@ -37,8 +37,6 @@ export async function signOutUser() {
 
 export async function signUpUser(prevState: unknown, formData: FormData) {
   try {
-    console.log("Form Data:", formData);
-
     const user = signUpFormSchema.parse({
       name: formData.get("name"),
       email: formData.get("email"),
@@ -46,13 +44,9 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
       confirmPassword: formData.get("confirmPassword"),
     });
 
-    console.log("Parsed User:", user);
-
     const plainPassword = user.password;
 
     user.password = hashSync(user.password, 10);
-
-    console.log("Hashed Password:", user.password);
 
     // Create new user
     const newUser = new User({
@@ -63,8 +57,6 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
 
     // Save user to database
     await newUser.save();
-
-    console.log("User created successfully");
 
     await signIn("credentials", {
       email: user.email,

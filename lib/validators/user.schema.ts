@@ -5,8 +5,10 @@ import { z } from "zod";
 
 export const userSchema = z.object({
   _id: z.string().optional(),
+  name: z.string().min(3),
   username: z.string().min(3),
   email: z.string().email(),
+  role: z.string(),
   password: z.string(),
   image: z.string().optional(),
   favorites: z.array(z.string()).optional(),
